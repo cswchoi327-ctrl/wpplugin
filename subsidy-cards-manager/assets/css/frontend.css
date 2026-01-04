@@ -1,0 +1,547 @@
+/* ==========================================================================
+   지원금 카드 매니저 - 프론트엔드 스타일
+   ========================================================================== */
+
+/* 기본 설정 */
+.scm-cards-wrapper {
+    max-width: 768px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: 'Apple SD Gothic Neo', 'Noto Sans KR', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+/* ========== 히어로 섹션 ========== */
+.scm-hero-section {
+    background: linear-gradient(135deg, #2563EB 0%, #3182F6 50%, #0EA5E9 100%);
+    border-radius: 24px;
+    padding: 40px 32px;
+    margin-bottom: 32px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.scm-hero-section::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -20%;
+    width: 300px;
+    height: 300px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+}
+
+.scm-hero-section::after {
+    content: '';
+    position: absolute;
+    bottom: -30%;
+    left: -10%;
+    width: 200px;
+    height: 200px;
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 50%;
+}
+
+.scm-hero-content {
+    position: relative;
+    z-index: 1;
+}
+
+.scm-hero-urgent {
+    display: inline-block;
+    background: rgba(255, 255, 255, 0.95);
+    color: #DC2626;
+    padding: 8px 16px;
+    border-radius: 50px;
+    font-size: 13px;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.scm-hero-sub {
+    font-size: 15px;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 8px;
+}
+
+.scm-hero-title {
+    font-size: 32px;
+    font-weight: 800;
+    color: white;
+    line-height: 1.3;
+    margin-bottom: 8px;
+    letter-spacing: -0.5px;
+}
+
+.scm-hero-highlight {
+    color: #FDE047;
+}
+
+.scm-hero-amount {
+    font-size: 15px;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 28px;
+}
+
+.scm-hero-amount strong {
+    color: #FDE047;
+    font-weight: 700;
+}
+
+.scm-hero-cta {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background: white;
+    color: #2563EB;
+    padding: 18px 40px;
+    border-radius: 16px;
+    font-size: 17px;
+    font-weight: 700;
+    text-decoration: none;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    animation: pulse 2s infinite, bounce 1s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0% { box-shadow: 0 0 0 0 rgba(49, 130, 246, 0.4); }
+    70% { box-shadow: 0 0 0 10px rgba(49, 130, 246, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(49, 130, 246, 0); }
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-5px); }
+}
+
+.scm-hero-cta:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.2);
+}
+
+.scm-cta-arrow {
+    font-size: 18px;
+    transition: transform 0.3s ease;
+}
+
+.scm-hero-cta:hover .scm-cta-arrow {
+    transform: translateX(4px);
+}
+
+.scm-hero-trust {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 24px;
+    flex-wrap: wrap;
+}
+
+.scm-trust-item {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 13px;
+    font-weight: 500;
+}
+
+.scm-hero-notice {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(8px);
+    border-radius: 12px;
+    padding: 16px 20px;
+    margin-top: 24px;
+    text-align: left;
+}
+
+.scm-notice-title {
+    font-size: 14px;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 6px;
+}
+
+.scm-notice-desc {
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.85);
+    line-height: 1.5;
+    margin: 0;
+}
+
+/* ========== 정보 박스 ========== */
+.scm-info-box {
+    background: #F0F9FF;
+    border-radius: 16px;
+    padding: 24px;
+    margin-bottom: 32px;
+    border-left: 4px solid #3182F6;
+}
+
+.scm-info-box-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 8px;
+}
+
+.scm-info-box-icon {
+    font-size: 18px;
+}
+
+.scm-info-box-title {
+    font-size: 20px;
+    font-weight: 700;
+    color: #1a1a1a;
+}
+
+.scm-info-box-amount {
+    font-size: 19px;
+    font-weight: 700;
+    color: #3182F6;
+    margin-bottom: 8px;
+}
+
+.scm-info-box-desc {
+    font-size: 16px;
+    color: #6B7280;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* ========== 카드 그리드 ========== */
+.scm-info-card-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+    margin-bottom: 30px;
+}
+
+.scm-info-card {
+    background: #ffffff;
+    border-radius: 20px;
+    padding: 0;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+    display: flex;
+    flex-direction: column;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(0, 0, 0, 0.04);
+}
+
+.scm-info-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 40px rgba(49, 130, 246, 0.15);
+}
+
+/* ========== 금액 강조 영역 ========== */
+.scm-info-card-highlight {
+    background: linear-gradient(135deg, #3182F6 0%, #1E6AD4 100%);
+    padding: 24px 24px 20px;
+    position: relative;
+}
+
+.scm-card-featured .scm-info-card-highlight {
+    background: linear-gradient(135deg, #2563EB 0%, #1D4ED8 100%);
+}
+
+.scm-info-card-amount {
+    font-size: 32px;
+    font-weight: 800;
+    color: #ffffff;
+    letter-spacing: -1px;
+    line-height: 1.2;
+}
+
+.scm-info-card-amount-sub {
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.8);
+    font-weight: 500;
+    margin-top: 6px;
+}
+
+.scm-info-card-badge {
+    position: relative;
+    overflow: hidden;
+    display: inline-block;
+    background: rgba(255, 255, 255, 0.2);
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 600;
+    color: #fff;
+    margin-bottom: 10px;
+}
+
+.scm-info-card-badge::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+    animation: shine 2s infinite;
+}
+
+@keyframes shine {
+    0% { left: -100%; }
+    50%, 100% { left: 100%; }
+}
+
+/* ========== 콘텐츠 영역 ========== */
+.scm-info-card-content {
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.scm-info-card-title {
+    font-size: 18px;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin-bottom: 8px;
+    line-height: 1.4;
+}
+
+.scm-info-card-desc {
+    font-size: 14px;
+    color: #71717a;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    flex-grow: 1;
+}
+
+.scm-info-card-details {
+    background: #F0F9FF;
+    border-radius: 12px;
+    padding: 16px;
+    margin-bottom: 20px;
+}
+
+.scm-info-card-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 6px 0;
+}
+
+.scm-info-card-row:not(:last-child) {
+    border-bottom: 1px dashed #bfdbfe;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+}
+
+.scm-info-card-label {
+    font-size: 13px;
+    color: #64748b;
+    font-weight: 500;
+}
+
+.scm-info-card-value {
+    font-size: 13px;
+    font-weight: 600;
+    color: #1e3a5f;
+}
+
+/* ========== 신청 버튼 ========== */
+.scm-info-card-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    width: 100%;
+    padding: 16px 20px;
+    background: linear-gradient(135deg, #3182F6 0%, #1E6AD4 100%);
+    color: white;
+    border-radius: 12px;
+    font-size: 15px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(49, 130, 246, 0.3);
+}
+
+.scm-info-card-btn:hover {
+    background: linear-gradient(135deg, #1E6AD4 0%, #1556B0 100%);
+    box-shadow: 0 6px 20px rgba(49, 130, 246, 0.4);
+    transform: translateY(-2px);
+}
+
+.scm-info-card:hover .scm-info-card-btn {
+    background: linear-gradient(135deg, #1E6AD4 0%, #0D4EA6 100%);
+    transform: scale(1.02);
+}
+
+.scm-btn-arrow {
+    transition: transform 0.25s ease;
+    font-size: 16px;
+}
+
+.scm-info-card:hover .scm-btn-arrow {
+    transform: translateX(4px);
+}
+
+/* ========== 광고 카드 ========== */
+.scm-ad-card {
+    background: #ffffff;
+    border-radius: 20px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+    border: 1px solid rgba(0, 0, 0, 0.04);
+    padding: 16px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* ========== 이탈 방지 팝업 ========== */
+.scm-exit-popup-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 9999;
+    justify-content: center;
+    align-items: center;
+}
+
+.scm-exit-popup {
+    background: #ffffff;
+    border-radius: 20px;
+    padding: 30px;
+    max-width: 340px;
+    text-align: center;
+    margin: 20px;
+    animation: popIn 0.3s ease;
+}
+
+@keyframes popIn {
+    0% { transform: scale(0.8); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+.scm-exit-popup-title {
+    font-size: 20px;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin-bottom: 12px;
+}
+
+.scm-exit-popup-desc {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 20px;
+    line-height: 1.5;
+}
+
+.scm-exit-popup-btn {
+    display: block;
+    width: 100%;
+    padding: 14px;
+    background: linear-gradient(135deg, #3182F6 0%, #1E6AD4 100%);
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    margin-bottom: 10px;
+    transition: all 0.3s ease;
+}
+
+.scm-exit-popup-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(49, 130, 246, 0.4);
+}
+
+.scm-exit-popup-close {
+    background: none;
+    border: none;
+    color: #999;
+    font-size: 13px;
+    cursor: pointer;
+    padding: 8px;
+}
+
+.scm-exit-popup-close:hover {
+    color: #666;
+}
+
+/* ========== 반응형 ========== */
+@media (max-width: 768px) {
+    .scm-cards-wrapper {
+        padding: 16px;
+    }
+    
+    .scm-info-card-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .scm-info-card-highlight {
+        padding: 20px;
+    }
+    
+    .scm-info-card-amount {
+        font-size: 28px;
+    }
+    
+    .scm-info-card-content {
+        padding: 20px;
+    }
+    
+    .scm-info-card-title {
+        font-size: 17px;
+    }
+    
+    .scm-hero-section {
+        padding: 32px 20px;
+        border-radius: 20px;
+    }
+    
+    .scm-hero-title {
+        font-size: 26px;
+    }
+    
+    .scm-hero-cta {
+        padding: 16px 32px;
+        font-size: 16px;
+        width: 100%;
+    }
+    
+    .scm-hero-trust {
+        gap: 12px;
+    }
+    
+    .scm-trust-item {
+        font-size: 12px;
+    }
+    
+    .scm-ad-card {
+        background: transparent;
+        border-radius: 0;
+        box-shadow: none;
+        border: none;
+        padding: 0;
+    }
+}
+
+/* ========== 인쇄 숨김 ========== */
+@media print {
+    .scm-exit-popup-overlay,
+    .scm-hero-cta,
+    .scm-info-card-btn,
+    .scm-ad-card {
+        display: none !important;
+    }
+}
